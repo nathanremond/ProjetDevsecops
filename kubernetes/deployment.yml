@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: projetdevsecops
-          image: nathanremond/projetdevsecops:2
+          image: nathanremond/projetdevsecops:4
           imagePullPolicy: Always
           resources: {}
       restartPolicy: Always
