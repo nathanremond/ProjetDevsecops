@@ -13,37 +13,29 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: projetdevsecops
     spec:
       containers:
         - name: projetdevsecops
-          image: nathanremond/projetdevsecops:1
+          image: nathanremond/projetdevsecops:2
           imagePullPolicy: Always
-          ports:
-            - containerPort: 8080
           resources: {}
       restartPolicy: Always
-status: {}
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: null
   labels:
     app: projetdevsecops
   name: projetdevsecops
 spec:
   ports:
-    - port: 80
+    - port: 8082
       protocol: TCP
       targetPort: 8080
       name: http
   selector:
     app: projetdevsecops
-  type: LoadBalancer
-status:
-  loadBalancer: {}
